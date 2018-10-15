@@ -189,7 +189,7 @@ resource "aws_cloudwatch_log_group" "ecs" {
 }
 
 resource "aws_route53_record" "dns_name" {
-  zone_id                   = "${var.zoneid}"
+  zone_id                   = "${var.zoneid["${var.ENV}"]}"
   name                      = "${var.url["${var.NAME}"]}"
   type                      = "CNAME"
   ttl                       = 60
