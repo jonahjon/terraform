@@ -20,7 +20,7 @@ functions:
               - "ECS Task State Change"
             detail:
               clusterArn:
-                - "arn:aws:ecs:us-east-1:MYCLUSTER/ARN"
+                - ${env:APP_URL}
 
 plugins:
   - serverless-python-requirements
