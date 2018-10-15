@@ -13,4 +13,8 @@ terraform get
 terraform init -input=false
 terraform plan-input=false  -out=tfplan
 terraform apply -input=false tfplan
+export CLUSTER="terraform output cluster_arn"
+export APP_URL="terraform output url"
+sls deploy
 ```
+
