@@ -20,7 +20,7 @@ functions:
               - "ECS Task State Change"
             detail:
               clusterArn:
-                - ${env:APP_URL}
+                - ${env:CLUSTER}
 
 plugins:
   - serverless-python-requirements
