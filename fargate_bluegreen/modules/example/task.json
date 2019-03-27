@@ -1,0 +1,32 @@
+[
+    {
+        "name": "app",
+        "memory": 1024,
+        "image": "${accountid}.dkr.ecr.us-east-1.amazonaws.com/app:${environment}",
+        "cpu": 512,
+        "portMappings": [
+        {
+            "containerPort": 80,
+            "hostPort": 80,
+            "protocol": "tcp"
+        }
+        ],
+        "essential": true,
+        "entryPoint": [
+            "nginx",
+            "-g",
+            "daemon off;"
+        ],
+        "mountPoints": [],
+        "volumesFrom": [],
+        "dnsSearchDomains": [],
+        "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+            "awslogs-group": "/ecs/${environment}-app",
+            "awslogs-region": "${region}",
+            "awslogs-stream-prefix": "ecs"
+        }
+        }
+    }
+]

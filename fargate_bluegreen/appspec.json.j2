@@ -1,0 +1,12 @@
+{
+    "applicationName": "{{ code_deploy_app }}",
+    "deploymentGroupName": "{{ deployment_group }}",
+    "revision": {
+        "revisionType": "S3",
+        "s3Location": {
+            "bucket": "my-terraform-bucket",
+            "key": "deployment.json",
+            "bundleType": "JSON"
+        }
+    }
+}
